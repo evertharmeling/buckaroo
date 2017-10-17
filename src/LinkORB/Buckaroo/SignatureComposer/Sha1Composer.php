@@ -38,7 +38,7 @@ class Sha1Composer implements SignatureComposer
         $signatureString = '';
 
         foreach ($parameters as $key => $value) {
-            $signatureString .= $key . '=' . $value;
+            $signatureString .= $key . '=' . urldecode($value);
         }
 
         $signatureString .= $this->secret;
